@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <style type = "text/css">
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .buttons {
+        position: absolute;
+        top: 400;
+      }
+      .car {
+        position: absolute;
+        top: 250;
+      }
+    </style>
+    <script type = "text/javascript">
+      var imgObj = null;
+      var animate = null;
+      
+      function init() {
+        imgObj = document.getElementById("myImage");
+        imgObj.style.position = "relative";
+        imgObj.style.left = "0px";
+      }
+      
+      function moveRight() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + "px";
+        imgObj.style.transform = "scaleX(1)";
+      }
+      
+      function moveLeft() {
+        imgObj.style.left = parseInt(imgObj.style.left) - 10 + "px";
+        imgObj.style.transform = "scaleX(-1)";
+      }
+      
+      var rotation_counter = 0;
+      
+      function rotate() {
+        imgObj.style.left = parseInt(imgObj.style.left) + "px";
+        rotation_counter += 0.1;
+        imgObj.style.transform = "rotate(" + rotation_counter + "turn)";
+      }
+      
+      function driveRight() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + "px";
+        animate = setTimeout(driveRight, 20);
+      }
+      
+      function stop() {
+        clearTimeout(animate);
+//        imgObj.style.left = "0px";
+      }
+      
+      window.onload = init;
+    </script>
+  </head>
+  <body>
+    <h1>Moving An Image</h1>
+    <img src = "images/city-background.png" class = "background" width = "600">
+    <img id = "myImage" src = "images/car-transparent.png" width = "180" class = "car">
+    <div class = "buttons">
+       <p>click button(s) below to move the image</p>
+      <input type = "button" value = "move left" onclick = "moveLeft();"/>
+      <input type = "button" value = "move right" onclick = "moveRight();"/>
+      <input type = "button" value = "rotate" onclick = "rotate();"/>
+      <input type = "button" value = "start" onclick = "driveRight();"/>
+      <input type = "button" value = "stop" onclick = "stop();"/>
+    </div>
+  </body>
+</html>

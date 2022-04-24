@@ -1,0 +1,48 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>
+      Adding Items With A Button
+    </h1>
+    <h2>
+      Here is a list: 
+    </h2>
+    <div id="items"> Coffee </div>
+    <p>Click "append" to append an item to the end of the list.</p>
+    
+    <button onclick="myFunction()">Append</button>
+    <button onclick="addItem('items','Water')">Add Water</button>
+    <button onclick="addItem('items','Juice')">Add Juice</button>
+    <button onclick="addImage('items')">Add Image</button>
+    <button onclick="removeLast()">Delete Last</button>
+    <script>
+      function myFunction() {
+        let node = document.createElement("div");
+        let textnode = document.createTextNode("Item");
+        node.appendChild(textnode);
+        document.getElementById("items").appendChild(node);
+      }
+      
+      function addItem(id, item_name) {
+        let node = document.createElement("div");
+        let textnode = document.createTextNode(item_name);
+        node.appendChild(textnode);
+        document.getElementById(id).appendChild(node);
+      }
+      
+      function addImage(id) {
+        let img = document.createElement("img");
+        img.src = 'images/soda-glass.jpg';
+        document.getElementById(id).appendChild(img);
+      }
+      
+      function removeLast() {
+        let node = document.getElementById("items");
+        node.removeChild(node.lastChild);
+      }
+      
+//      var item = setInterval(myFunction,2000);
+    </script>
+  </body>
+</html>
