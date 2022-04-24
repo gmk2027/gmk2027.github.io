@@ -4,7 +4,7 @@ body {
   font-family: "Hiragino Kaku Gothic Pro", "Yu Gothic", sans-serif;
   /*font-family: "Monaco";*/
   /*background-color: #000000;*/
-  background-color: #212121;
+  background-color: #BA4DFF;
   /*background-color: #FFFFFF;*/
   color: #404040;
   margin-top: 0;
@@ -22,7 +22,7 @@ body > header, body > section, body > footer {
 
 body > header {
   /*background-color: #F08000;*/
-  background-color: #424242;
+  background-color: #940DEA;
   color: #FFFFFF;
   /*color: #000000;*/
   text-align: right;
