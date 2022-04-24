@@ -4,7 +4,7 @@ body {
   font-family: "Hiragino Kaku Gothic Pro", "Yu Gothic", sans-serif;
   /*font-family: "Monaco";*/
   /*background-color: #000000;*/
-  background-color: #BA4DFF;
+  background-color: #3C3837;
   /*background-color: #FFFFFF;*/
   color: #404040;
   margin-top: 0;
@@ -15,14 +15,14 @@ body {
 
 body > header, body > section, body > footer {
   width: 800px;
-  color: #FFFFFF;
+  color: #FCABCA;
   margin-left: auto;
   margin-right: auto;
 }
 
 body > header {
   /*background-color: #F08000;*/
-  background-color: #940DEA;
+  background-color: #FCABCA;
   color: #FFFFFF;
   /*color: #000000;*/
   text-align: right;
@@ -44,7 +44,7 @@ body > section h1 {
   font-size: 18pt;
   font-weight: bold;
   /*color: #F08000;*/
-  color: #87bdd8;
+  color: #EE5F95;
   /*border-bottom: 2px solid #FF9E1E;*/
   border-bottom: 2px solid #FFFFFF;
 }
