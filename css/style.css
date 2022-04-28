@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Square+Peg&display=swap");
 
 body {
   font-family: "Hiragino Kaku Gothic Pro", "Yu Gothic", sans-serif;
@@ -22,6 +23,7 @@ body > header, body > section, body > footer {
 
 body > header {
   /*background-color: #F08000;*/
+  font-family: "Square Peg";
   background-color: #FCABCA;
   color: #557731;
   /*color: #000000;*/
@@ -31,7 +33,7 @@ body > header {
 }
 
 body > header h1 {
-  font-size: 32pt;
+  font-size: 48pt;
   font-weight: bold;
   padding: 16px;
   margin: 0;
