@@ -23,10 +23,11 @@ body > header, body > section, body > footer {
 body > header {
   /*background-color: #F08000;*/
   background-color: #FCABCA;
-  color: #FFFFFF;
+  color: #557731;
   /*color: #000000;*/
   text-align: right;
   margin-bottom: 32px;
+  background-image: url("/images/floral-pattern.jpeg");
 }
 
 body > header h1 {
