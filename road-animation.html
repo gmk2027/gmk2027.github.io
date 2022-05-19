@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script>
+      // moved distance
+      var m;
+
+      var trees_x_coordinates;
+
+      var trees_y_coordinates;
+
+      function setup() {
+          // println(trees_x_coordinates.size());
+          initializeFields();
+          createCanvas(800, 800);
+          for (var i = 0; i < 6; i++) {
+              var x_coordinates_tree = new Array(3);
+              x_coordinates_tree[0] = 50 + (i * 150);
+              x_coordinates_tree[1] = 0 + (i * 150);
+              x_coordinates_tree[2] = 100 + (i * 150);
+              trees_x_coordinates.add(x_coordinates_tree);
+              var y_coordinates_tree = new Array(3);
+              y_coordinates_tree[0] = 100;
+              y_coordinates_tree[1] = 600;
+              y_coordinates_tree[2] = 600;
+              trees_y_coordinates.add(y_coordinates_tree);
+          }
+      }
+
+      function draw() {
+          background(color(0x7A, 0xE5, 0xE8));
+          noStroke();
+          // this draws the truck.
+          fill(color(0xC2, 0xD0, 0xD1));
+          triangle(200, 50, -100, 600, 900, 600);
+          fill(color(0xFF, 0xFF, 0xFF));
+          triangle(200, 50, 50, 325, 550, 325);
+          fill(color(0xC1, 0x7A, 0x23));
+          rect(0, 600, 800, 200);
+          fill(color(0x15, 0x12, 0x0E));
+          rect(0, 700, 800, 100);
+          // this draws the trees
+          fill(color(0x0C, 0xF5, 0x15));
+          // Draw first tree;
+          draw_tree(0);
+          draw_tree(1);
+          draw_tree(2);
+          draw_tree(3);
+          draw_tree(4);
+          draw_tree(5);
+          move_tree(0);
+          move_tree(1);
+          move_tree(2);
+          move_tree(3);
+          move_tree(4);
+          move_tree(5);
+          fill(color(0x33, 0x79, 0xCB));
+          triangle(200, 650, 250, 550, 250, 650);
+          fill(color(0xE8, 0x59, 0x3D));
+          rect(250, 550, 100, 100);
+          rect(200, 650, 400, 90);
+          fill(color(0x70, 0x7E, 0x7E));
+          ellipse(290, 740, 90, 90);
+          ellipse(500, 740, 90, 90);
+          for (var i = 0; i < 6; i++) {
+              if (trees_x_coordinates.get(i)[1] > 800) {
+                  trees_x_coordinates.get(i)[0] = -50;
+                  trees_x_coordinates.get(i)[1] = -100;
+                  trees_x_coordinates.get(i)[2] = 0;
+              }
+          }
+      }
+
+      function draw_tree(tree_number) {
+          triangle(trees_x_coordinates.get(tree_number)[0], trees_y_coordinates.get(tree_number)[0], trees_x_coordinates.get(tree_number)[1], trees_y_coordinates.get(tree_number)[1], trees_x_coordinates.get(tree_number)[2], trees_y_coordinates.get(tree_number)[2]);
+      }
+
+      function move_tree(tree_number) {
+          trees_x_coordinates.get(tree_number)[0] += m;
+          trees_x_coordinates.get(tree_number)[1] += m;
+          trees_x_coordinates.get(tree_number)[2] += m;
+      }
+
+      function initializeFields() {
+          m = 10;
+          trees_x_coordinates = new ArrayList<int[]>();
+          trees_y_coordinates = new ArrayList<int[]>();
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+    </main>
+  </body>
+</html>

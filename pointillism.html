@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script>
+      var img;
+      var pointillize; //The size of circles.
+
+      function preload() {
+        pointillize = 20;
+
+        img = loadImage('https://m.media-amazon.com/images/I/91gl91S-94L._AC_SX425_.jpg'); //Sunflower image from Google Image Search.
+        // img = loadImage("./images/sunflower.jpg")
+        //img = loadImage('https://upload.wikimedia.org/wikipedia/commons/5/51/Mr._Smiley_Face.svg');
+      }
+
+
+      function setup() {
+          createCanvas(img.width, img.height);
+        //createCanvas(500,500);
+          // noLoop(); // Uncommenting this allows the sketch to stop at the first frame.
+          smooth();
+      }
+
+      function draw() {
+          // Pick a random point
+          // let d = pixelDensity();
+          var x = int(random(img.width)); // Take a random value between 0 and the width of the image and set it as x.
+          var y = int(random(img.height)); // Take a random value between 0 and the width of the image and set it as y.
+
+          var loc = (x + y * img.width) * 4; // img.pixels is an array of size (x * y * 4);
+
+          // Look up the RGB color in the source image
+          img.loadPixels();
+
+          var r = img.pixels[loc];
+          var g = img.pixels[loc+1];
+          var b = img.pixels[loc+2];
+          var a = img.pixels[loc+3];
+          //print(img.width);
+          // print("x: " + x + " y: " + y); 
+          // print("loc: " + loc + " r: " + r + " g: " + g + " b: " + b);
+          // print(r + " " + g + " " + b);
+          // print("Value: " + img.pixels[loc]);
+          // img.updatePixels();
+          noStroke();
+          // Back to shapes! Instead of setting a pixel, we use the color
+          // // from a pixel to draw a circle.
+          fill(r, g, b, 100);
+          // fill(r, g, b, a);
+          // fill(127, 255, 0);
+          ellipse(x, y, pointillize, pointillize);
+      }
+
+    </script>
+  </head>
+  <body>
+    <main>
+    </main>
+  </body>
+</html>
